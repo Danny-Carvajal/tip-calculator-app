@@ -33,30 +33,40 @@
       </div>
 
       <div class="people-section">
+        <div class="label-row">
         <span id="people-text">Number of People</span>
-        <input type="number" id="total-people" name="people" placeholder="0"/>
+        <span id="people-warning" class="warning hidden">Can't be zero</span>
+        </div>
+
+        <input type="number" id="total-people" name="people" placeholder="0" step="1" min="1"/>
       </div>
     </div>
   
 
 
     <div class="amount-card">
+      <div class="not-button-section">
+        <div class="tip-section">
+          <div class="tip-amount-text">
+            <span id="text-amount">Tip Amount</span>
+            <span class="text-person">/ person</span>
+          </div>
+          <span id="tip-amount-number">0.00</span>
+        </div>
 
-      <div class="tip-amount-text">
-        <span id="text-amount">Tip Amount</span>
-        <span class="text-person">/ person</span>
+        <div class="total-section">
+          <div class="total-amount-text">
+            <span id="text-total">Total</span>
+            <span class="text-person">/ person</span>
+          </div>
+          <span id="total-amount-number">0.00</span>
+        </div>
       </div>
-      <span id="tip-amount-number"></span>
-
-      <div class="total-amount-text">
-        <span id="text-total">Total</span>
-        <span class="text-person">/ person</span>
-      </div>
-      <span id="person-amount-number"></span>
-
-      <button class="reset-button">Reset</button>
+      <button class="reset-button">RESET</button>
     </div>
   </div>
+  
+  <script type="module" src="/src/main.js" defer></script>
   
   <div class="attribution">
     Challenge by <a class="attr-text" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

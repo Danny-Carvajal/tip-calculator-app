@@ -47,7 +47,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin:6.7vh;
-    padding: 2rem;
+    padding: 1.5rem 2rem 1.5rem 2.5rem;
     gap: 2.5rem;
 }
 
@@ -63,12 +63,14 @@ body {
 /* Specific Card Sections */
 /* ====================== */
 
+/* =========== */
 /* Top Section */
+/* =========== */
 
 .bill-section {
     display: flex;
     flex-direction: column;
-
+    width: 100%;
 
     & #bill-text {
         color: var(--Grey-500);
@@ -81,17 +83,30 @@ body {
         background-color: var(--Grey-50);
         color: var(--Green-900);
         font-size: 24px;
+        font-weight: 700;
         text-align: right;
         padding: 0.2rem;
         background: url("/images/icon-dollar.svg") no-repeat left 10px center;
+        width: 92%;
+        margin: 0rem 0.5rem;
+        border-radius: 0.1rem;
     }
 
     & #total-bill::placeholder {
         color: var(--Grey-400);
     }
+
+    & #total-bill:focus {
+        transition: none;
+        outline: 2px solid var(--Green-400);
+        outline-offset: 1px;
+        caret-color: var(--Green-400);
+    }
 }
 
+/* ============== */
 /* Middle Section */
+/* ============== */
 
 .button-section {
     display: flex;
@@ -122,21 +137,45 @@ body {
         padding: 0.5rem 1rem;
         border-radius: 0.3rem;
         text-align: center;
+        transition: 0.2s;
     }
+
+    /* Custom Input */
 
     & #custom {
         background-color: var(--Grey-50);
         color: var(--Green-900);
         text-align: right;
-        
+
+        & #custom::placeholder {
+            color: var(--Grey-500);
+        }
     }
 
-    & #custom::placeholder {
-        color: var(--Grey-500);
+    & #custom:focus {
+    transition: none;
+    outline: 2px solid var(--Green-400);
+    outline-offset: 1px;
+    caret-color: var(--Green-400);
     }
+
+    /* Button Hover & Focus */
+
+    & .button:hover {
+        color: var(--Green-900);
+        background-color: var(--Green-400);
+        cursor: pointer;
+    }
+
+    & .button:focus {
+        background-color: var(--Green-400);
+        color: var(--Green-900);
+    }
+
+    
 }
 
-/*So Custom doesn't have arrows*/
+/*So Custom Button doesn't have arrows*/
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -144,11 +183,14 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* Bottom Section */
+/* ============= */
+/* Bottom Styles */
+/* ============= */
 
 .people-section {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     & #people-text {
         color: var(--Grey-500);
@@ -156,18 +198,55 @@ input[type="number"]::-webkit-outer-spin-button {
         margin-bottom: 0.5rem;
     }
 
+    /* Warning if people = 0 */
+
+    & .label-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & .warning {
+        color: hsl(13, 70%, 61%);
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    & .hidden {
+        display: none;
+    }
+
+    & input.error,
+    & input.error:focus {
+        outline: 2px solid hsl(13, 70%, 61%) !important;
+        outline-offset: 1px;
+        border-radius: 0.1rem;
+    }
+
     & #total-people {
         all: unset;
         background-color: var(--Grey-50);
         color: var(--Green-900);
         font-size: 24px;
+        font-weight: 700;
         text-align: right;
         padding: 0.2rem;
         background: url("/images/icon-person.svg") no-repeat left 10px center;
+        width: 92%;
+        margin: 0rem 0.5rem;
+        border-radius: 0.1rem;
     }
 
     & #total-people::placeholder {
         color: var(--Grey-400);
+    }
+
+    & #total-people:focus {
+        transition: none;
+        outline: 2px solid var(--Green-400);
+        outline-offset: 1px;
+        caret-color: var(--Green-400);
     }
 }
 
@@ -200,11 +279,25 @@ input[type="number"]::-webkit-outer-spin-button {
 .amount-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: inherit;
-    width: 24rem;
-    height: 40vh;
+    width: 25rem;
+    height: 42vh;
     background-color: var(--Green-900);
     border-radius: 0.75rem;
+    padding: 2.5rem 2rem;
+}
+
+/* =========== */
+/* Tip Section */
+/* =========== */
+
+.tip-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
 .tip-amount-text {
@@ -213,8 +306,28 @@ input[type="number"]::-webkit-outer-spin-button {
 
     & #text-amount {
         color: var(--White);
+        font-size: 0.9rem;
+        font-weight: 700;
     }
 
+}
+
+#tip-amount-number {
+    color: var(--Green-400);
+    font-size: 2.75rem;
+    font-weight: 700;
+
+}
+
+/* ============= */
+/* Total Section */
+/* ============= */
+
+.total-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .total-amount-text {
@@ -223,27 +336,41 @@ input[type="number"]::-webkit-outer-spin-button {
 
     & #text-total {
         color: var(--White);
+        font-size: 0.9rem;
+        font-weight: 700;
     }
+}
+
+#total-amount-number {
+    color: var(--Green-400);
+    font-size: 2.75rem;
+    font-weight: 700;
 }
 
 .text-person {
     color: var(--Grey-400);
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
-/*
-<div class="tip-amount-text">
-        <span id="text-amount">Tip Amount</span>
-        <span class="text-person">/ person</span>
-      </div>
-      <span id="tip-amount-number"></span>
+/* Reset Button */
 
-      <div class="total-amount-text">
-        <span class="text-amount">Total</span>
-        <span class="text-person">/ person</span>
-      </div>
-      <span id="person-amount-number"></span>
+.reset-button {
+    all: unset;
+    background-color: var(--Green-400);
+    color: var(--Green-900);
+    text-align: center;
+    height: 3rem;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.2s;
+}
 
-      <button class="reset-button">Reset</button>
-*/
+& .reset-button:hover {
+    background-color: var(--Grey-200);
+    cursor: pointer;
+}
+
+/* ==================== */
+/* Rsponsive Section */
