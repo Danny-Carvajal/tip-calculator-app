@@ -1,0 +1,249 @@
+/* =========== */
+/* Main Styles */
+/* =========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+}
+
+:root {
+    --White: hsl(0, 100%, 100%);
+    --Green-400: hsl(172, 67%, 45%);
+    --Green-900: hsl(184, 76%, 17%);
+    --Grey-500: hsl(186, 14%, 43%);
+    --Grey-400: hsl(184, 14%, 56%);
+    --Grey-200: hsl(185, 41%, 84%);
+    --Grey-50: hsl(189, 47%, 97%);
+}
+
+body {
+    font-family: "Space Mono", monospace;
+    background-color: var(--Grey-200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+/* ============ */
+/* Cards Styles */
+/* ============ */
+
+.main-card {
+    background-color: var(--White);
+    width: 90vh;
+    height:49vh;
+    border-radius: 1.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin:6.7vh;
+    padding: 2rem;
+    gap: 2.5rem;
+}
+
+.selection-card {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2.75rem;
+}
+
+/* ====================== */
+/* Specific Card Sections */
+/* ====================== */
+
+/* Top Section */
+
+.bill-section {
+    display: flex;
+    flex-direction: column;
+
+
+    & #bill-text {
+        color: var(--Grey-500);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    & #total-bill {
+        all: unset;
+        background-color: var(--Grey-50);
+        color: var(--Green-900);
+        font-size: 24px;
+        text-align: right;
+        padding: 0.2rem;
+        background: url("/images/icon-dollar.svg") no-repeat left 10px center;
+    }
+
+    & #total-bill::placeholder {
+        color: var(--Grey-400);
+    }
+}
+
+/* Middle Section */
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.2rem;
+    margin-bottom: 2.2rem;
+
+    & #tip-text {
+        color: var(--Grey-500);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    & .button-group {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 1rem;
+    }
+
+    & .button {
+        all: unset;
+        color: var(--White);
+        background-color: var(--Green-900);
+        font-size: 1.35rem;
+        font-weight: 700;
+        max-width: 5.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        text-align: center;
+    }
+
+    & #custom {
+        background-color: var(--Grey-50);
+        color: var(--Green-900);
+        text-align: right;
+        
+    }
+
+    & #custom::placeholder {
+        color: var(--Grey-500);
+    }
+}
+
+/*So Custom doesn't have arrows*/
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Bottom Section */
+
+.people-section {
+    display: flex;
+    flex-direction: column;
+
+    & #people-text {
+        color: var(--Grey-500);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    & #total-people {
+        all: unset;
+        background-color: var(--Grey-50);
+        color: var(--Green-900);
+        font-size: 24px;
+        text-align: right;
+        padding: 0.2rem;
+        background: url("/images/icon-person.svg") no-repeat left 10px center;
+    }
+
+    & #total-people::placeholder {
+        color: var(--Grey-400);
+    }
+}
+
+/* ===================== */
+/* Outside the Main Card */
+/* ===================== */
+
+.title {
+    color: var(--Grey-500);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5rem;
+    margin: 1rem;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    color: var(--Grey-500);
+
+    & .attr-text {
+        color: var(--Green-900)
+    }
+}
+
+/* =============== */
+/* Right Side Card */
+/* =============== */
+
+.amount-card {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    width: 24rem;
+    height: 40vh;
+    background-color: var(--Green-900);
+    border-radius: 0.75rem;
+}
+
+.tip-amount-text {
+    display: flex;
+    flex-direction: column;
+
+    & #text-amount {
+        color: var(--White);
+    }
+
+}
+
+.total-amount-text {
+    display: flex;
+    flex-direction: column;
+
+    & #text-total {
+        color: var(--White);
+    }
+}
+
+.text-person {
+    color: var(--Grey-400);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/*
+<div class="tip-amount-text">
+        <span id="text-amount">Tip Amount</span>
+        <span class="text-person">/ person</span>
+      </div>
+      <span id="tip-amount-number"></span>
+
+      <div class="total-amount-text">
+        <span class="text-amount">Total</span>
+        <span class="text-person">/ person</span>
+      </div>
+      <span id="person-amount-number"></span>
+
+      <button class="reset-button">Reset</button>
+*/

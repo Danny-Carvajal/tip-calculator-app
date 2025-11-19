@@ -5,40 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/style.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <span class="title">SPLI <br> TTER</span>
+  <div class="main-card">
+    <div class="selection-card">
 
-  Bill
+      <div class="bill-section">
+        <span id="bill-text">Bill</span>
+        <input type="number" id="total-bill" name="bill" placeholder="0"/>
+      </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <div class="button-section">
+        <span id="tip-text">Select Tip %</span>
+        <div class="button-group">
+          <button class="button">5%</button>
+          <button class="button">10%</button>
+          <button class="button">15%</button>
+          <button class="button">25%</button>
+          <button class="button">50%</button>
+          <input class="button" id="custom" type="number" placeholder="Custom"/>
+        </div>
+      </div>
 
-  Number of People
+      <div class="people-section">
+        <span id="people-text">Number of People</span>
+        <input type="number" id="total-people" name="people" placeholder="0"/>
+      </div>
+    </div>
+  
 
-  Tip Amount
-  / person
 
-  Total
-  / person
+    <div class="amount-card">
 
-  Reset
+      <div class="tip-amount-text">
+        <span id="text-amount">Tip Amount</span>
+        <span class="text-person">/ person</span>
+      </div>
+      <span id="tip-amount-number"></span>
+
+      <div class="total-amount-text">
+        <span id="text-total">Total</span>
+        <span class="text-person">/ person</span>
+      </div>
+      <span id="person-amount-number"></span>
+
+      <button class="reset-button">Reset</button>
+    </div>
+  </div>
   
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a class="attr-text" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="attr-text" href="#">Danny</a>.
   </div>
 </body>
 </html>
