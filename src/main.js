@@ -90,11 +90,11 @@ function calculate() {
     const tipPerPerson = (bill * tipPercent) / people;
     const totalPerPerson = bill / people + tipPerPerson;
 
-    tipAmount.textContent = tipPerPerson.toFixed(2);
-    totalAmount.textContent = totalPerPerson.toFixed(2);
+    tipAmount.textContent = `$${tipPerPerson.toFixed(2)}`;
+    totalAmount.textContent = `$${totalPerPerson.toFixed(2)}`;
   } else {
-    tipAmount.textContent = "0.00";
-    totalAmount.textContent = "0.00";
+    tipAmount.textContent = "$0.00";
+    totalAmount.textContent = "$0.00";
   }
 }
 
@@ -136,6 +136,6 @@ resetBtn.addEventListener("click", () => {
   tipButtons.forEach((b) => b.classList.remove("active"));
 
   // reset tip
-  tipAmount.textContent = "0.00";
-  totalAmount.textContent = "0.00";
+  tipAmount.textContent = "$0.00";
+  totalAmount.textContent = "$0.00";
 });
